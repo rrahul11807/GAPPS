@@ -3,6 +3,9 @@ package com.example.gapps;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -22,6 +25,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        final FusedLocationProviderClient client = LocationServices.getFusedLocationProviderClient(this);
+
+
+        LocationRequest req = new LocationRequest();
+        req.setInterval(2000); // 2 seconds
+        req.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
     }
 
 
