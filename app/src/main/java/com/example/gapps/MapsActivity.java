@@ -41,7 +41,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         LocationRequest req = new LocationRequest();
-        req.setInterval(10000); // 6000 seconds
+        req.setInterval(2000); // 6000 seconds
         req.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
         // Here, thisActivity is the current activity
